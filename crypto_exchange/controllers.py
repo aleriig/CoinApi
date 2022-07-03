@@ -12,9 +12,11 @@ class CryptoController:
         another_exchange = "S"
         while another_exchange.upper() == "S":
             origin, destination = self.view.ask_coin()
+            
             self.model.origin_coin = origin
             self.model.destination_coin = destination
             self.model.check_exchange()
+            
             self.view.show_exchange(origin, destination, self.model.exchange)
 
             another_exchange = ""
