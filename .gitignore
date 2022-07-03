@@ -128,5 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# maintain our api key confidentially
-api_key
