@@ -15,7 +15,7 @@ while another_exchange.upper() == "S":
     response = requests.get(url, headers=headers)
     exchange_rate = response.json()
     exchange = exchange_rate["rate"]
-    print("Un {} vale como {:,.2f} {}".format(exchange_rate["asset_id_base"], exchange_rate["rate"], exchange_rate["asset_id_quote"]))
+    print("Un {} vale como {:,.2f} {}".format(origin_coin, exchange, destination_coin))
 
     another_exchange = ""
     while another_exchange.upper() not in ("S", "N"): 

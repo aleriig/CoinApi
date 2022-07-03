@@ -15,5 +15,11 @@ class CryptoView:
         destination = input("Que moneda quieres obtener?: ")
         return (origin, destination)
 
-    def show_exchange(self, origin, exchange, destination):
-        return print("Un {} vale como {:,.2f} {}".format(origin, exchange, destination))
+    def show_exchange(self, origin, destination, exchange):
+        print("Un {} vale como {:,.2f} {}".format(origin, exchange, destination))
+
+    def continue_exchange(self):
+        another_exchange = input("Quieres hacer mas cambios de moneda?: (S/N) ")
+        return another_exchange.upper()
+
+        

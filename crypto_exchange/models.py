@@ -16,13 +16,13 @@ class CryptoModel:
 
     """
 
-    def __init__(self, origin, destination):
+    def __init__(self):
         """
         COnstruye un objeto con las monedas origen y destino y el cambio obtenido desde CoinAPI inicializado a cero.
         
         """
-        self.origin_coin = origin
-        self.destination_coin = destination
+        self.origin_coin = ""
+        self.destination_coin = ""
         self.exchange = 0.0
         
 
