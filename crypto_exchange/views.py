@@ -1,3 +1,5 @@
+from tkinter import ttk
+
 """
     Models <=> Controllers <=> Views
     Models <////> Views (NUNCA hay comunicacion entre el model y el view directamente)
@@ -22,4 +24,13 @@ class CryptoView:
         another_exchange = input("Quieres hacer mas cambios de moneda?: (S/N) ")
         return another_exchange.upper()
 
+
+class CryptoViewTK(ttk.Frame):
+    def __init__(self, father):
+        super().__init__(father, width=400, height=400)
+        self.create_controllers()
+
+    def create_controllers(self):
+        example_label = ttk.Label(self)
+        example_label.grid(row=0, column=0)
         

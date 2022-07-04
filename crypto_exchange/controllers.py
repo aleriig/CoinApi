@@ -1,5 +1,7 @@
+from tkinter import Tk
 from .models import CryptoModel
 from .views import CryptoView
+from .views import CryptoViewTK
 
 class CryptoController:
 
@@ -22,3 +24,9 @@ class CryptoController:
             another_exchange = ""
             while another_exchange.upper() not in ("S", "N"):
                 another_exchange = self.view.continue_exchange()
+
+
+class CryptoControllerTk():
+    def __init__(self):
+        super().__init__()
+        self.view = CryptoViewTK(self)
