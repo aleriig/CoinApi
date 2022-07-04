@@ -1,7 +1,8 @@
-from tkinter import Tk
+from tkinter import *
+
 from .models import CryptoModel
-from .views import CryptoView
-from .views import CryptoViewTK
+from .views import CryptoView, CryptoViewTK
+
 
 class CryptoController:
 
@@ -26,7 +27,11 @@ class CryptoController:
                 another_exchange = self.view.continue_exchange()
 
 
-class CryptoControllerTk():
+class CryptoControllerTk(Tk):
     def __init__(self):
         super().__init__()
         self.view = CryptoViewTK(self)
+        self.models = CryptoModel()
+
+    def run(self):
+        self.mainloop()
