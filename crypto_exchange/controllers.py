@@ -30,8 +30,16 @@ class CryptoController:
 class CryptoControllerTk(Tk):
     def __init__(self):
         super().__init__()
-        self.view = CryptoViewTK(self)
+        # Hacemos un callback, metiendo una funcion como un parametro 
+        self.view = CryptoViewTK(self, self.calculate_exchange)
         self.models = CryptoModel()
 
     def run(self):
         self.mainloop()
+
+    def calculate_exchange(self):
+        """ 
+        - Recoge los datos de la vista y los pasa al modelo.
+        - Pide el cambio al modelo y le pasa el resultado a la     vista.
+        """
+        print("Hola soy calcular cambio CryptoControllerTK")

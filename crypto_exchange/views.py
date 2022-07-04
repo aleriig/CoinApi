@@ -28,8 +28,9 @@ class CryptoView:
 
 
 class CryptoViewTK(ttk.Frame):
-    def __init__(self, father):
+    def __init__(self, father, action):
         super().__init__(father, width=400, height=400, padding=20)
+        self.button_functionality = action
         self.grid()
         self.create_controllers()
 
@@ -51,12 +52,12 @@ class CryptoViewTK(ttk.Frame):
         destination_combo.grid(row=1, column=1)
 
 
-        # Resultado de conversion
+        # label para la conversion
         self.exchange_label = ttk.Label(self, text="0.0",padding=20)
         self.exchange_label.grid(row=2, column=0, columnspan=2)
 
         # Entrada de botton de conversion. Con el command registramos el evento de clickar el boton
-        self.convert_button = ttk.Button(self, text="Convert", command=self.button_function)
+        self.convert_button = ttk.Button(self, text="Convert", command=self.button_functionality)
         self.convert_button.grid(row=3, column=1)
 
     def origin_coin(self):
@@ -66,7 +67,7 @@ class CryptoViewTK(ttk.Frame):
         return self.destination.get()[:3]
 
 
-    def button_function(self):
+    def button_functionality(self):
         # Usamos el "get" para que el programa nos devuelva el valor de la variable en una cadena.
         print("La moneda origen es: ", self.origin_coin())
         print("La moneda destino es: ", self.destination_coin())
