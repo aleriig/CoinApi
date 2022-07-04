@@ -30,7 +30,7 @@ class CryptoController:
 class CryptoControllerTk(Tk):
     def __init__(self):
         super().__init__()
-        # Hacemos un callback, metiendo una funcion como un parametro 
+        # Hacemos un callback, metiendo una funcion como un parametro para recibir de Views y sin llamarla
         self.view = CryptoViewTK(self, self.calculate_exchange)
         self.models = CryptoModel()
 
